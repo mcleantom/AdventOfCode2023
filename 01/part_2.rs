@@ -3,7 +3,7 @@ use std::io::{self, prelude::*, BufReader};
 use std::collections::HashMap;
 
 fn decode_line(line: &String) -> u32 {
-    static let str_to_number = HashMap::from([
+    let str_to_number = HashMap::from([
         ("one", 1),
         ("two", 2),
         ("three", 3),
@@ -32,7 +32,7 @@ fn decode_line(line: &String) -> u32 {
     
     let second = (0..line.len())
         .find_map(|i| {
-            str_to_number.keys().find(|key| line[..(line.len()-i)].ends_with(*key))
+            str_to_number.keys().find(|key| line[..(line.len()-i)].starts_with(*key))
         })
         .unwrap_or_else(|| panic!("Cound not find second number in {}", line));
     
