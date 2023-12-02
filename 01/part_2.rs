@@ -3,7 +3,7 @@ use std::io::{self, prelude::*, BufReader};
 use std::collections::HashMap;
 
 fn decode_line(line: &String) -> u32 {
-    let str_to_number = HashMap::from([
+    static let str_to_number = HashMap::from([
         ("one", 1),
         ("two", 2),
         ("three", 3),
