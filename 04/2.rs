@@ -2,7 +2,6 @@ use std::fs::File;
 use std::io::{self, prelude::*, BufReader};
 use std::collections::HashSet;
 use std::collections::HashMap;
-use std::collections::VecDeque;
 
 #[derive(Debug)]
 struct Game {
@@ -32,9 +31,10 @@ impl Game {
             .collect();
         
         let number_of_matches = matching_numbers.len();
-        
+        let my_number = number.parse::<i32>().unwrap() - 1;
+
         Game {
-            number: number.parse().unwrap(),
+            number: my_number,
             winning_numbers,
             my_numbers,
             number_matching_numbers: number_of_matches as i32
@@ -53,33 +53,16 @@ impl Game {
 
 
 fn calc_winning_scratchcards(games: &Vec<String>) -> i32 {
-    let games = games.iter().map(|line| Game::new(line)).collect::<Vec<Game>>();
-    let games: HashMap<i32, Game> = games.iter().map(|game| (game.number, game.clone())).collect();
-    let mut queue: VecDeque<i32> = games.iter().map(|(k, _)| *k).collect();
-    queue.make_contiguous().sort();
-    let mut sum = 0;
-    let mut total_cards: HashMap<i32, i32> = HashMap::new();
+    let mut games = games.iter().map(|line| Game::new(line)).collect::<Vec<Game>>();
+    let mut copies = vec![1; games.len()];
 
-    while !queue.is_empty() {
-        let game = queue.pop_front().unwrap();
-        let mut game = games.get(&game).unwrap().clone();
-        if game.number_matching_numbers > 0 {
-            match total_cards.get_mut(&game.number) {
-                Some(num) => *num += 1,
-                None => {
-                    total_cards.insert(game.number, 1);
-                }
-            }
-            // insert in the queue the game.number to game.number + game.number_of_matches
-            for i in (game.number+1)..(game.number + game.number_matching_numbers + 1) {
-                queue.push_back(i);
-                sum += 1;
-            }
+    for game in games.iter() {
+        for i in (game.number+1)..(game.number+game.number_matching_numbers+1) {
+            copies[i as usize] += copies[game.number as usize];
         }
     }
 
-    sum += games.len() as i32;
-    sum
+    copies.into_iter().sum()
 }
 
 
