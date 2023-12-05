@@ -1,0 +1,27 @@
+[package]
+name = "aoc23"
+version = "0.1.0"
+publish = false
+edition = "2021"
+description = "Advent of Code - 2023"
+repository = "https://github.com/mcleantom/AdventOfCode2023"
+readme = "README.md"
+keywords = []
+categories = []
+
+[lib]
+name = "lib"
+path = "src/lib.rs"
+bench = true
+
+[[bin]]
+name = "bin"
+path = "src/bin.rs"
+bench = false
+
+[profile.flamegraph]
+inherits = "release"
+debug = true
+
+[dependencies]
+itertools = "0.12.0"
