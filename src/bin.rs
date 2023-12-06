@@ -4,14 +4,14 @@
 use lib::days::*;
 
 const INPUT_D1_PART_1_TEST: &str = include_str!("../res/day1_part1_test.txt");
-// const INPUT_D1_PART_2_TEST: &str = include_str!("../res/day1_part2_test.txt");
+const INPUT_D1_PART_2_TEST: &str = include_str!("../res/day1_part2_test.txt");
 const INPUT_D2_TEST: &str = include_str!("../res/day2_test.txt");
 const INPUT_D3_TEST: &str = include_str!("../res/day3_test.txt");
 const INPUT_D4_TEST: &str = include_str!("../res/day4_test.txt");
 const INPUT_D5_TEST: &str = include_str!("../res/day5_test.txt");
 const INPUT_D6_TEST: &str = include_str!("../res/day6_test.txt");
 
-// const INPUT_D1: &str = include_str!("../res/day1.txt");
+const INPUT_D1: &str = include_str!("../res/day1.txt");
 const INPUT_D2: &str = include_str!("../res/day2.txt");
 const INPUT_D3: &str = include_str!("../res/day3.txt");
 const INPUT_D4: &str = include_str!("../res/day4.txt");
@@ -20,9 +20,9 @@ const INPUT_D6: &str = include_str!("../res/day6.txt");
 
 fn main() {
     assert_eq!(day1::part1(INPUT_D1_PART_1_TEST), 142);
-    // assert_eq!(day1::part1(INPUT_D1), 55538);
-    // assert_eq!(day1::part2(INPUT_D1_PART_2_TEST), 281);
-    // assert_eq!(day1::part2(INPUT_D1), 54875);
+    assert_eq!(day1::part1(INPUT_D1), 55538);
+    assert_eq!(day1::part2(INPUT_D1_PART_2_TEST), 281);
+    assert_eq!(day1::part2(INPUT_D1), 54875);
 
     assert_eq!(day2::part1(INPUT_D2_TEST), 8);
     assert_eq!(day2::part1(INPUT_D2), 2_207);

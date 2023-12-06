@@ -37,7 +37,7 @@ fn decode_line_inc_words(line: &str) -> u64 {
     
     let second = (0..line.len())
         .find_map(|i| {
-            str_to_number.keys().find(|key| line[..(line.len()-i)].starts_with(*key))
+            str_to_number.keys().find(|key| line[..(line.len()-i)].ends_with(*key))
         })
         .unwrap_or_else(|| panic!("Cound not find second number in {}", line));
     
