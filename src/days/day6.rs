@@ -35,8 +35,7 @@ fn number_of_ways_to_beat_race_distance(race: &Race) -> i64 {
 
     let (x_1, x_2) = (x_1.floor() as i64 + 1, x_2.ceil() as i64 - 1);
 
-    let (a, b) = (x_1, x_2);
-    b - a + 1
+    x_2 - x_1 + 1
 }
 
 
