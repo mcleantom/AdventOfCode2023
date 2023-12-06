@@ -5,23 +5,24 @@ struct Race {
 }
 
 
-fn number_of_ways_to_beat_race_distance(t_run: u32, dist_record: i64, v:u8) -> i64 {
+fn number_of_ways_to_beat_race_distance(race: &Race) -> i64 {
     /*
     The inequality is:
-    distance = wait_time * (race_time - wait_time)
+    distance < wait_time * (race_time - wait_time)
     d = w * (t - w)
-    d = wt - w^2
-    w^2 - wt + d = 0
+    d = -w^2 + tw
+    0 = -w^2 + tw - d
+ 
+    a = -1
+    b = t
+    c = -d
 
-    a = 1
-    b = -t
-    c = d
-
-    w = (-b +- sqrt(b^2 - 4ac)) / 2a
+    Then apply quadratic formula:
+    x = (-b +- sqrt(b^2 - 4ac)) / 2a
     */
     let a: i64 = -1;
-    let b: i64 = i64::from(v as u32 * t_run);
-    let c: i64 = -dist_record;
+    let b: i64 = race.time as i64;
+    let c: i64 = -(race.distance as i64);
 
     let b_squared = b.pow(2);
     let term = b_squared - 4 * a * c;
@@ -70,7 +71,7 @@ pub fn part1(lines: &str) -> i64 {
 
     let number_of_ways: Vec<i64> = races
         .iter()
-        .map(|race| number_of_ways_to_beat_race_distance(race.time as u32, race.distance as i64, 1))
+        .map(|race| number_of_ways_to_beat_race_distance(&race))
         .collect();
     
     let product = number_of_ways
@@ -103,6 +104,6 @@ pub fn part2(lines: &str) -> i64 {
         time,
         distance,
     };
-    let number_of_ways = number_of_ways_to_beat_race_distance(race.time as u32, race.distance as i64, 1);
+    let number_of_ways = number_of_ways_to_beat_race_distance(&race);
     number_of_ways
 }
