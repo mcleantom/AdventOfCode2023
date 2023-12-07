@@ -51,6 +51,8 @@ fn main() {
     assert_eq!(day6::part2(INPUT_D6_TEST), 71_503);
     assert_eq!(day6::part2(INPUT_D6), 26_187_338);
 
-    assert_eq!(day7::part1(INPUT_D7_TEST), 6440);
-    assert_eq!(day7::part1(INPUT_D7), 6440);
+    assert_eq!(day7::part1(INPUT_D7_TEST), 3542);
+    assert_eq!(day7::part1(INPUT_D7), 250347426);
+    assert_eq!(day7::part2(INPUT_D7_TEST), 3667);
+    assert_eq!(day7::part2(INPUT_D7), 0);
 }
