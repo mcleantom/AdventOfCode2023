@@ -13,6 +13,7 @@ const INPUT_D6_TEST: &str = include_str!("../res/day6_test.txt");
 const INPUT_D7_TEST: &str = include_str!("../res/day7_test.txt");
 const INPUT_D8_PART1_TEST1: &str = include_str!("../res/day8_part1_test1.txt");
 const INPUT_D8_PART1_TEST2: &str = include_str!("../res/day8_part1_test2.txt");
+const INPUT_D8_PART2_TEST1: &str = include_str!("../res/day8_part2_test1.txt");
 
 const INPUT_D1: &str = include_str!("../res/day1.txt");
 const INPUT_D2: &str = include_str!("../res/day2.txt");
@@ -63,4 +64,5 @@ fn main() {
     assert_eq!(day8::part1(INPUT_D8_PART1_TEST1), 2);
     assert_eq!(day8::part1(INPUT_D8_PART1_TEST2), 6);
     assert_eq!(day8::part1(INPUT_D8), 11911);
+    assert_eq!(day8::part2(INPUT_D8_PART2_TEST1), 66);
 }
