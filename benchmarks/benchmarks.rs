@@ -23,6 +23,7 @@ mod test_input {
     const INPUT_D8_PART1_TEST1: &str = include_str!("../res/day8_part1_test1.txt");
     const INPUT_D8_PART1_TEST2: &str = include_str!("../res/day8_part1_test2.txt");
     const INPUT_D8_PART2_TEST1: &str = include_str!("../res/day8_part2_test1.txt");
+    const INPUT_D9_TEST: &str = include_str!("../res/day9_test.txt");
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
     fn day1_part1() -> u64 {
@@ -109,6 +110,16 @@ mod test_input {
         day8::part2(black_box(INPUT_D8_PART2_TEST1))
     }
 
+    #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
+    fn day9_part1() -> i32 {
+        day9::part1(black_box(INPUT_D9_TEST))
+    }
+
+    #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
+    fn day9_part2() -> i32 {
+        day9::part2(black_box(INPUT_D9_TEST))
+    }
+
 }
 
 mod real_input {
@@ -124,6 +135,7 @@ mod real_input {
     const INPUT_D6: &str = include_str!("../res/day6.txt");
     const INPUT_D7: &str = include_str!("../res/day7.txt");
     const INPUT_D8: &str = include_str!("../res/day8.txt");
+    const INPUT_D9: &str = include_str!("../res/day9.txt");
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
     fn day1_part1() -> u64 {
@@ -203,6 +215,16 @@ mod real_input {
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
     fn day8_part2() -> u64 {
         day8::part2(black_box(INPUT_D8))
+    }
+
+    #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
+    fn day9_part1() -> i32 {
+        day9::part1(black_box(INPUT_D9))
+    }
+
+    #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
+    fn day9_part2() -> i32 {
+        day9::part2(black_box(INPUT_D9))
     }
 
 }
