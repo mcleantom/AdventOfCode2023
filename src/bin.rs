@@ -78,4 +78,7 @@ fn main() {
 
     assert_eq!(day11::part1(INPUT_D11_TEST), 374);
     assert_eq!(day11::part1(INPUT_D11), 10231178);
+    assert_eq!(day11::calc(INPUT_D11_TEST, 10), 1030);
+    assert_eq!(day11::calc(INPUT_D11_TEST, 100), 8410);
+    assert_eq!(day11::part2(INPUT_D11), 622120986954);
 }

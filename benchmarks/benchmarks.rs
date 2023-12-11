@@ -24,100 +24,111 @@ mod test_input {
     const INPUT_D8_PART1_TEST2: &str = include_str!("../res/day8_part1_test2.txt");
     const INPUT_D8_PART2_TEST1: &str = include_str!("../res/day8_part2_test1.txt");
     const INPUT_D9_TEST: &str = include_str!("../res/day9_test.txt");
+    const INPUT_D11_TEST: &str = include_str!("../res/day11_test.txt");
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day1_part1() -> u64 {
+    fn day01_part1() -> u64 {
         day1::part1(black_box(INPUT_D1_PART_1_TEST))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day1_part2() -> u64 {
+    fn day01_part2() -> u64 {
         day1::part2(black_box(INPUT_D1_PART_2_TEST))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day2_part1() -> usize {
+    fn day02_part1() -> usize {
         day2::part1(black_box(INPUT_D2_TEST))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day2_part2() -> u32 {
+    fn day02_part2() -> u32 {
         day2::part2(black_box(INPUT_D2_TEST))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day3_part1() -> u32 {
+    fn day03_part1() -> u32 {
         day3::part1(black_box(INPUT_D3_TEST))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day3_part2() -> u32 {
+    fn day03_part2() -> u32 {
         day3::part2(black_box(INPUT_D3_TEST))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day4_part1() -> usize {
+    fn day04_part1() -> usize {
         day4::part1(black_box(INPUT_D4_TEST))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day4_part2() -> i32 {
+    fn day04_part2() -> i32 {
         day4::part2(black_box(INPUT_D4_TEST))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day5_part1() -> i64 {
+    fn day05_part1() -> i64 {
         day5::part1(black_box(INPUT_D5_TEST))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day5_part2() -> i64 {
+    fn day05_part2() -> i64 {
         day5::part2(black_box(INPUT_D5_TEST))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day6_part1() -> i64 {
+    fn day06_part1() -> i64 {
         day6::part1(black_box(INPUT_D6_TEST))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day6_part2() -> i64 {
+    fn day06_part2() -> i64 {
         day6::part2(black_box(INPUT_D6_TEST))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day7_part1() -> i64 {
+    fn day07_part1() -> i64 {
         day7::part1(black_box(INPUT_D7_TEST))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day7_part2() -> i64 {
+    fn day07_part2() -> i64 {
         day7::part2(black_box(INPUT_D7_TEST))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day8_part1_test1() -> u64 {
+    fn day08_part1_test1() -> u64 {
         day8::part1(black_box(INPUT_D8_PART1_TEST1))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day8_part1_test2() -> u64 {
+    fn day08_part1_test2() -> u64 {
         day8::part1(black_box(INPUT_D8_PART1_TEST2))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day8_part2() -> u64 {
+    fn day08_part2() -> u64 {
         day8::part2(black_box(INPUT_D8_PART2_TEST1))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day9_part1() -> i32 {
+    fn day09_part1() -> i32 {
         day9::part1(black_box(INPUT_D9_TEST))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day9_part2() -> i32 {
+    fn day09_part2() -> i32 {
         day9::part2(black_box(INPUT_D9_TEST))
+    }
+
+    #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
+    fn day11_part1() -> u64 {
+        day11::part1(black_box(INPUT_D11_TEST))
+    }
+
+    #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
+    fn day11_part2() -> u64 {
+        day11::part2(black_box(INPUT_D11_TEST))
     }
 
 }
@@ -136,95 +147,105 @@ mod real_input {
     const INPUT_D7: &str = include_str!("../res/day7.txt");
     const INPUT_D8: &str = include_str!("../res/day8.txt");
     const INPUT_D9: &str = include_str!("../res/day9.txt");
+    const INPUT_D11: &str = include_str!("../res/day11.txt");
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day1_part1() -> u64 {
+    fn day01_part1() -> u64 {
         day1::part1(black_box(INPUT_D1))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day1_part2() -> u64 {
+    fn day01_part2() -> u64 {
         day1::part2(black_box(INPUT_D1))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day2_part1() -> usize {
+    fn day02_part1() -> usize {
         day2::part1(black_box(INPUT_D2))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day2_part2() -> u32 {
+    fn day02_part2() -> u32 {
         day2::part2(black_box(INPUT_D2))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day3_part1() -> u32 {
+    fn day03_part1() -> u32 {
         day3::part1(black_box(INPUT_D3))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day3_part2() -> u32 {
+    fn day03_part2() -> u32 {
         day3::part2(black_box(INPUT_D3))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day4_part1() -> usize {
+    fn day04_part1() -> usize {
         day4::part1(black_box(INPUT_D4))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day4_part2() -> i32 {
+    fn day04_part2() -> i32 {
         day4::part2(black_box(INPUT_D4))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day5_part1() -> i64 {
+    fn day05_part1() -> i64 {
         day5::part1(black_box(INPUT_D5))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day5_part2() -> i64 {
+    fn day05_part2() -> i64 {
         day5::part2(black_box(INPUT_D5))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day6_part1() -> i64 {
+    fn day06_part1() -> i64 {
         day6::part1(black_box(INPUT_D6))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day6_part2() -> i64 {
+    fn day06_part2() -> i64 {
         day6::part2(black_box(INPUT_D6))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day7_part1() -> i64 {
+    fn day07_part1() -> i64 {
         day7::part1(black_box(INPUT_D7))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day7_part2() -> i64 {
+    fn day07_part2() -> i64 {
         day7::part2(black_box(INPUT_D7))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day8_part1() -> u64 {
+    fn day08_part1() -> u64 {
         day8::part1(black_box(INPUT_D8))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day8_part2() -> u64 {
+    fn day08_part2() -> u64 {
         day8::part2(black_box(INPUT_D8))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day9_part1() -> i32 {
+    fn day09_part1() -> i32 {
         day9::part1(black_box(INPUT_D9))
     }
 
     #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
-    fn day9_part2() -> i32 {
+    fn day09_part2() -> i32 {
         day9::part2(black_box(INPUT_D9))
     }
 
+    #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
+    fn day11_part1() -> u64 {
+        day11::part1(black_box(INPUT_D11))
+    }
+
+    #[bench(sample_count = SAMPLE_COUNT, sample_size = SAMPLE_SIZE)]
+    fn day11_part2() -> u64 {
+        day11::part2(black_box(INPUT_D11))
+    }
 }
